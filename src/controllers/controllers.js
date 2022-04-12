@@ -1,6 +1,34 @@
 const Middleware = require("../middleware/rules");
+
 exports.checkHealth = (req, res) => {
-  res.render("health");
+  const data = {
+    nama: "Dimas Aulia",
+  };
+  res.render("health", data);
+};
+
+exports.view_1 = (req, res) => {
+  res.render("view_1", {
+    nama: "Dimas Aulia",
+  });
+};
+
+exports.view_2 = (req, res) => {
+  res.render("view_2", {
+    data: "Website Keren Ini 🔥",
+  });
+};
+
+exports.view_3 = (req, res) => {
+  const data = {
+    user: [
+      { id: 1, name: "bob" },
+      { id: 2, name: "john" },
+      { id: 3, name: "jake" },
+    ],
+  };
+
+  res.render("view_3", data);
 };
 
 exports.biodata = (req, res) => {
